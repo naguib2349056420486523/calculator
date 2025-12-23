@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="wrapper">
+        <div class="calculator">
+            <div class="calc-header">
+                <span style="font-size: 12px; opacity: 0.6; font-weight: bold;">SCIENTIFIC</span>
+                <div class="mode-toggle" id="deg-rad-btn" onclick="toggleDegRad()">
+                    <span id="label-deg" class="mode-active">DEG</span> | <span id="label-rad">RAD</span>
+                </div>
+            </div> 
+            <div class="screen-container">
+                <div id="history-preview"></div>
+                <input type="text" id="display" placeholder="0" readonly>
+            </div>
+            
+            <div class="buttons-grid">
+                <button class="btn-sci" onclick="addFunc('sin(')">sin</button>
+                <button class="btn-sci" onclick="addFunc('cos(')">cos</button>
+                <button class="btn-sci" onclick="addFunc('tan(')">tan</button>
+                <button class="btn-clear" onclick="deleteLast()">DEL</button>
+                <button class="btn-clear" onclick="clearAll()">AC</button>
+                
+                <button class="btn-sci" onclick="addFunc('asin(')">asin</button>
+                <button class="btn-sci" onclick="addFunc('acos(')">acos</button>
+                <button class="btn-sci" onclick="addFunc('atan(')">atan</button>
+                <button class="btn-sci" onclick="addConst('π')">π</button>
+                <button class="btn-op" onclick="addOp('/')">÷</button>
+
+                <button class="btn-sci" onclick="addFunc('log(')">log</button>
+                <button class="btn-sci" onclick="addFunc('ln(')">ln</button>
+                <button class="btn-sci" onclick="addNum('(')">(</button>
+                <button class="btn-sci" onclick="addNum(')')">)</button>
+                <button class="btn-op" onclick="addOp('*')">×</button>
+
+                <button class="btn-sci" onclick="addOp('^')">x^y</button>
+                <button onclick="addNum('7')">7</button>
+                <button onclick="addNum('8')">8</button>
+                <button onclick="addNum('9')">9</button>
+                <button class="btn-op" onclick="addOp('-')">-</button>
+
+                <button class="btn-sci" onclick="addFunc('√(')">√</button>
+                <button onclick="addNum('4')">4</button>
+                <button onclick="addNum('5')">5</button>
+                <button onclick="addNum('6')">6</button>
+                <button class="btn-op" onclick="addOp('+')">+</button>
+
+                <button class="btn-sci" onclick="addFunc('fact(')">n!</button>
+                <button onclick="addNum('1')">1</button>
+                <button onclick="addNum('2')">2</button>
+                <button onclick="addNum('3')">3</button>
+                <button class="btn-sci" onclick="addConst('e')">e</button>
+
+                <button class="btn-sci" onclick="addFunc('abs(')">|x|</button>
+                <button onclick="addNum('.')">.</button>
+                <button onclick="addNum('0')">0</button>
+                <button class="btn-equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+
+
+        <div class="history-panel">
+            <h3>Calculations</h3>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>  
